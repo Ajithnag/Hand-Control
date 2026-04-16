@@ -1,0 +1,126 @@
+========================================
+HAND GESTURE CONTROL - QUICK START GUIDE
+========================================
+
+METHOD 1: EASIEST WAY (Recommended)
+=====================================
+1. Double-click "START.bat" file
+   - That's it! The application will launch automatically
+   - A console window will show camera status
+   - A camera window will appear showing your webcam feed
+
+METHOD 2: FULL SETUP (First Time Only)
+=======================================
+1. Double-click "run.bat"
+   - This creates a virtual environment (first time only)
+   - Installs all required dependencies automatically
+   - Launches the application
+
+METHOD 3: MANUAL RUN
+=====================
+1. Open Command Prompt or PowerShell
+2. Navigate to the project folder:
+   cd "C:\Users\GNANENDRA AJITH NAG\Desktop\Timepass_Projects\Hand Control"
+3. Install dependencies (if not already installed):
+   pip install -r requirements.txt
+4. Run the application:
+   python main.py
+
+========================================
+WHAT TO EXPECT
+========================================
+
+When you run the application:
+1. Console window appears showing:
+   - "Attempting to access camera..."
+   - "Camera initialized successfully!"
+   - Control instructions
+
+2. Camera window appears titled "Hand Gesture Control"
+   - Shows your webcam feed
+   - Yellow box shows tracking area
+   - Hand landmarks overlay when hand is detected
+
+========================================
+TROUBLESHOOTING
+========================================
+
+If camera doesn't show:
+
+STEP 1: Check Camera Permissions
+---------------------------------
+1. Press Windows Key + I (Settings)
+2. Go to Privacy & Security > Camera
+3. Make sure these are ON:
+   ✓ Allow apps to access your camera
+   ✓ Allow desktop apps to access your camera
+
+STEP 2: Close Other Apps Using Camera
+---------------------------------------
+- Close Zoom, Teams, Skype, Discord, etc.
+- Check Task Manager for camera processes
+
+STEP 3: Run Camera Diagnostic
+------------------------------
+1. Open Command Prompt in the project folder
+2. Run: python test_camera.py
+3. This will tell you which cameras are available
+
+STEP 4: Try Different Camera Index
+------------------------------------
+If you have multiple cameras, edit main.py:
+- Change: cv2.VideoCapture(0, ...) to cv2.VideoCapture(1, ...)
+
+STEP 5: Run as Administrator
+-----------------------------
+Right-click START.bat > Run as administrator
+
+========================================
+HOW TO USE
+========================================
+
+BASIC CONTROLS:
+- Move index finger → Moves mouse cursor
+- Tap index finger (quick down-up) → Left click
+- Double tap quickly → Double click
+- Hold finger down → Drag
+
+KEYBOARD SHORTCUTS (in camera window):
+- 'q' → Quit application
+- 'm' → Toggle CURSOR/MEDIA mode
+- 't' → Toggle tap/pinch click mode
+- 'p' → Toggle precision mode
+- 'c' → Calibrate tracking area
+- '[' → Slower cursor speed
+- ']' → Faster cursor speed
+- '-' → Decrease cursor gain
+- '=' → Increase cursor gain
+- 'd' → Double click manually
+
+========================================
+REQUIREMENTS
+========================================
+
+- Windows 10/11
+- Python 3.10 or 3.11 (64-bit)
+- Webcam connected and working
+- Dependencies (installed automatically by run.bat):
+  * opencv-python
+  * mediapipe
+  * numpy
+  * pyautogui
+  * pycaw
+  * comtypes
+
+========================================
+NEED HELP?
+========================================
+
+If camera still doesn't work:
+1. Run: python test_camera.py
+2. Check console output for error messages
+3. Verify webcam works in other apps (Camera app, Zoom, etc.)
+4. Try restarting your computer
+
+========================================
+
